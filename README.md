@@ -1,48 +1,87 @@
-# 🛡️ FraudShield AI
+# FraudShield AI
 
-**FraudShield AI** ek AI-powered fraud detection mobile app hai jo Pakistani banking users ko financial scams, phishing SMS, aur suspicious links se bachata hai. Yeh app **React Native (Expo)** se bana hai aur saath mein ek **Express API server** bhi hai jo OpenAI ke zariye real-time fraud analysis karta hai.
+> AI-Powered Fraud Detection Mobile App — Protecting Pakistani banking users from financial scams, phishing SMS, and suspicious links.
 
----
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Replit-orange?style=for-the-badge&logo=replit)](https://fraud-shield--moeenhaider12.replit.app)
 
-## ✨ Features
-
-- 🔍 **Transaction Analysis** — Har transaction ko automatically scan karta hai aur suspicious activity (large amount, unknown device, foreign location) ke liye risk score deta hai
-- 📩 **SMS Scanner** — Phishing keywords aur suspicious links ke liye incoming messages ko analyze karta hai
-- 🔗 **Link Checker** — URLs ko real-time check karta hai — suspicious TLDs, URL shorteners, phishing keywords, aur raw IP addresses detect karta hai
-- 🤖 **AI-Powered Analysis** — OpenAI GPT ke zariye SMS aur links ka deep analysis karta hai, Urdu aur English dono mein verdict deta hai
-- 🔐 **Secure Vault** — Biometric authentication (Face ID / Fingerprint) se protected — cards, passwords, aur notes securely store karta hai
-- 📊 **Security Score** — User ki overall security health ek 0–100 score mein dikhata hai
-- 🔔 **Background Notifications** — Background mein suspicious activity hone par alert deta hai
+> **How to open Live Demo:**
+> - **Mobile:** Install [Expo Go](https://play.google.com/store/apps/details?id=host.exp.exponent) app → Open app → Enter URL: `exp://fraud-shield--moeenhaider12.replit.app`
+> - **Browser:** Open `https://fraud-shield--moeenhaider12.replit.app`
 
 ---
 
-## 🏗️ Project Structure
+## App Screenshots
 
-```
-Fraud-Shield-AI/
-├── artifacts/
-│   ├── fraudshield/          # React Native (Expo) mobile app
-│   │   ├── lib/
-│   │   │   ├── data/         # API clients, storage, biometric, notifications
-│   │   │   └── domain/       # Pure fraud detection logic (analyzers, URL extractor)
-│   │   ├── constants/        # Theme colors
-│   │   └── hooks/            # Custom React hooks
-│   ├── api-server/           # Express 5 backend
-│   │   └── src/
-│   │       ├── routes/       # API routes (health, AI analyze)
-│   │       └── lib/          # Logger, OpenAI client
-│   └── mockup-sandbox/       # UI component preview sandbox
-├── lib/
-│   ├── api-spec/             # OpenAPI spec + Orval codegen config
-│   ├── api-zod/              # Auto-generated Zod validation schemas
-│   ├── api-client-react/     # Auto-generated React Query API hooks
-│   └── db/                   # PostgreSQL schema (Drizzle ORM)
-└── scripts/                  # Helper scripts
-```
+| Home Screen | SMS Scanner | Link Checker |
+|:---:|:---:|:---:|
+| ![Home](Screenshot_20260529_110636.jpg) | ![SMS](Screenshot_20260529_110642.jpg) | ![Link](Screenshot_20260529_110644.jpg) |
+
+| Secure Vault | Emergency Freeze | Account Frozen | Settings |
+|:---:|:---:|:---:|:---:|
+| ![Vault](Screenshot_20260529_110644.jpg) | ![Freeze](Screenshot_20260529_110646.jpg) | ![Frozen](Screenshot_20260529_110655.jpg) | ![Settings](Screenshot_20260529_110657.jpg) |
 
 ---
 
-## 🛠️ Tech Stack
+## Demo Video
+
+[![Watch Demo Video](https://img.shields.io/badge/Watch_Demo-Google_Drive-blue?style=for-the-badge&logo=google-drive)](https://drive.google.com/file/d/1BLFkettfymQqYb3LBAvJUdkhsJBN0kAT/view?usp=drivesdk)
+
+---
+
+## Download APK
+
+[![Download APK](https://img.shields.io/badge/Download_APK-FraudShieldAI-green?style=for-the-badge&logo=android)](https://github.com/syedMoeenhaider/Fraud-Shield-AI/releases/download/v1.0.0/FraudShieldAI.apk)
+
+> **Installation:** Download APK → Open file → Allow unknown sources → Install → Run
+
+---
+
+## Why FraudShield AI is Unique in Pakistan?
+
+> **Pakistan mein aaj tak koi dedicated AI-powered fraud detection mobile app available nahi thi — FraudShield AI is the FIRST of its kind!**
+
+### Market Research Proof
+
+We searched Google and Play Store for any similar fraud detection app in Pakistan — **nothing was found:**
+
+**Google Search Result:**
+> *"There is no single third-party app authorized to block all financial fraud in Pakistan"*
+
+![Google Search](Screenshot_google_search.jpg)
+
+**Play Store Search Result:**
+> *No dedicated fraud shield app exists for Pakistani users on Play Store*
+
+![Play Store Search](Screenshot_playstore_search.jpg)
+
+### What Makes Us Different?
+
+| Feature | Other Apps | FraudShield AI |
+|---|---|---|
+| AI-Powered SMS Detection | No | Yes |
+| Urdu Language Support | No | Yes |
+| Pakistani Bank Phishing Detection | No | Yes |
+| Real-time Link Scanner | No | Yes |
+| Emergency Account Freeze | No | Yes |
+| Secure Credential Vault | No | Yes |
+| Built for Pakistani Users | No | Yes |
+
+> **FraudShield AI fills a critical gap in Pakistan's digital security ecosystem — protecting millions of banking users who had NO dedicated protection tool before this app.**
+
+---
+
+## Features
+
+- **Home Dashboard** — Security score (0-100), alerts, activity overview, and quick action buttons
+- **SMS Scanner** — AI-powered phishing detection, classifies messages as Safe, Suspicious, or Dangerous
+- **Link Checker** — Paste any URL to instantly detect phishing, malware, and scam sites
+- **Secure Vault** — Biometric-protected storage for Bank PIN, ATM Card, Email Password, and Recovery Codes
+- **Emergency Freeze** — Instantly block all financial activity if fraud is suspected or card is lost/stolen
+- **Settings** — SMS Monitoring, Auto-Scan Links, Fraud Alerts, Biometric Lock, Dark Mode, Language (EN/Urdu)
+
+---
+
+## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -52,7 +91,6 @@ Fraud-Shield-AI/
 | AI | OpenAI GPT (gpt-5-mini) |
 | Database | PostgreSQL + Drizzle ORM |
 | Validation | Zod v4 + drizzle-zod |
-| API Codegen | Orval (OpenAPI → React Query hooks) |
 | Auth | expo-local-authentication (Face ID / Fingerprint) |
 | Storage | expo-secure-store + AsyncStorage |
 | Package Manager | pnpm workspaces (monorepo) |
@@ -60,161 +98,104 @@ Fraud-Shield-AI/
 
 ---
 
-## 🚀 Getting Started
+## How to Install APK
 
-### Prerequisites
-
-- **Node.js** v24+
-- **pnpm** v9+
-- **PostgreSQL** database
-- **OpenAI API Key**
-
-### Installation
-
-```bash
-# Repository clone karein
-git clone <your-repo-url>
-cd Fraud-Shield-AI
-
-# Dependencies install karein
-pnpm install
-```
-
-### Environment Variables
-
-`artifacts/api-server/` mein `.env` file banayein:
-
-```env
-OPENAI_API_KEY=your_openai_api_key_here
-DATABASE_URL=postgresql://user:password@localhost:5432/fraudshield
-PORT=3000
-```
-
-### Database Setup
-
-```bash
-# Schema push karein (development)
-pnpm --filter @workspace/db run push
-```
-
-### Development
-
-```bash
-# API server start karein
-pnpm --filter @workspace/api-server run dev
-
-# Mobile app start karein (alag terminal mein)
-pnpm --filter @workspace/fraudshield run dev
-```
+1. Click Download APK button above
+2. Open the APK file on your Android phone
+3. Tap "Allow from this source" if prompted
+4. Tap "Install" and wait
+5. Open FraudShield AI from home screen
 
 ---
 
-## 📋 Available Commands
-
-```bash
-# Poora project typecheck karein
-pnpm run typecheck
-
-# Poora project build karein
-pnpm run build
-
-# API hooks aur Zod schemas regenerate karein (OpenAPI spec se)
-pnpm --filter @workspace/api-spec run codegen
-
-# Database schema push karein (dev only)
-pnpm --filter @workspace/db run push
-
-# API server locally chalayein
-pnpm --filter @workspace/api-server run dev
-```
-
----
-
-## 🔌 API Endpoints
-
-### `POST /api/ai/analyze`
-
-SMS ya URL ka AI-powered fraud analysis karta hai.
-
-**Request Body:**
-```json
-{
-  "kind": "sms",        // "sms" ya "link"
-  "content": "...",     // Analyze karne wala text (max 2000 chars)
-  "locale": "en"        // "en" (English) ya "ur" (Urdu)
-}
-```
-
-**Response:**
-```json
-{
-  "verdict": "danger",
-  "riskScore": 85,
-  "summary": "This message contains phishing indicators.",
-  "reasons": ["Requests OTP", "Contains suspicious link"],
-  "recommendation": "Do not click any links or share your OTP."
-}
-```
-
-### `GET /api/health`
-
-Server health check.
-
----
-
-## 🧠 Fraud Detection Logic
-
-App do tarah se fraud detect karta hai:
+## Fraud Detection Logic
 
 ### 1. Rule-Based (Offline, Instant)
-- **Transactions:** Amount thresholds, unknown devices, non-trusted locations, high-risk categories (Wire Transfer, Crypto) check karta hai
-- **SMS:** Phishing keywords (`otp`, `verify`, `account blocked`, `lucky draw`, etc.) aur URLs scan karta hai
-- **Links:** Suspicious TLDs (`.tk`, `.ml`, `.xyz`), URL shorteners, raw IP addresses, phishing hint words check karta hai
+- **SMS:** Scans for phishing keywords (otp, verify, account blocked, lucky draw)
+- **Links:** Detects suspicious TLDs (.tk, .ml, .xyz), URL shorteners, raw IP addresses
 
 ### 2. AI-Powered (via OpenAI)
-- Deep contextual analysis for ambiguous cases
-- Supports Urdu and English responses
-- Returns structured JSON verdict with reasons and recommendations
+- Deep contextual analysis for complex cases
+- Supports English and Urdu responses
+- Returns verdict with specific reasons and recommendations
 
 ---
 
-## 🌍 Localization
-
-App **English** aur **Urdu** dono languages support karta hai. AI analysis bhi user ki chosen language mein respond karta hai.
-
----
-
-## 🔒 Security Features
+## Security Features
 
 - Biometric authentication (Face ID / Fingerprint / Device PIN)
 - Encrypted secure storage for vault items
+- Emergency account freeze with one tap
 - Background fraud monitoring with push notifications
-- Web fallback for browser-based demo
 
 ---
 
-## 📱 Permissions (Android)
+## Android Permissions
 
-```
-RECEIVE_SMS, READ_SMS        — SMS scanning ke liye
-INTERNET                     — API calls ke liye
-POST_NOTIFICATIONS           — Fraud alerts ke liye
-FOREGROUND_SERVICE           — Background monitoring ke liye
-RECEIVE_BOOT_COMPLETED       — Auto-start on boot ke liye
-```
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Feature branch banayein (`git checkout -b feature/amazing-feature`)
-3. Changes commit karein (`git commit -m 'Add amazing feature'`)
-4. Branch push karein (`git push origin feature/amazing-feature`)
-5. Pull Request kholen
+| Permission | Purpose |
+|---|---|
+| RECEIVE_SMS, READ_SMS | For SMS scanning |
+| INTERNET | For AI-powered analysis |
+| POST_NOTIFICATIONS | For fraud alerts |
+| FOREGROUND_SERVICE | For background monitoring |
+| RECEIVE_BOOT_COMPLETED | For auto-start on device boot |
 
 ---
 
-## 📄 License
+## Documentation
 
-MIT License — details ke liye [LICENSE](LICENSE) file dekhein.
+- [User Manual](user_manual.pdf)
+- [License](LICENSE.txt)
+
+---
+
+## Roadmap
+
+### Completed
+- [x] Home Dashboard with security score overview
+- [x] SMS Scanner with AI-powered phishing detection
+- [x] Link Checker with real-time URL analysis
+- [x] Secure Vault with biometric authentication
+- [x] Emergency Account Freeze
+- [x] Background fraud monitoring
+- [x] Urdu & English language support
+
+### Coming Soon
+- [ ] AI-powered transaction pattern analysis
+- [ ] Google Pay & EasyPaisa integration
+- [ ] Wearable device sync
+- [ ] Weekly & monthly security reports
+- [ ] Dark / Light theme toggle
+- [ ] Admin panel for security management
+- [ ] Database analytics & reports
+- [ ] Multi-bank API integration
+
+---
+
+## Developed By
+
+**Student Name:** Abdullah Shaher Yar
+**Project Instructor:** Mam Nabiha Komal
+
+---
+
+## License
+
+MIT License — see the [LICENSE.txt](LICENSE.txt) file for details.
+
+---
+
+<div align="center">
+
+FraudShield AI — Protecting Your Financial Future
+
+---
+
+Made  by **Abdullah Shaher Yar**
+
+**Project Instructor:** Mam Nabiha Komal
+
+[![Follow](https://img.shields.io/github/followers/syedMoeenhaider?label=Follow&style=social)](https://github.com/syedMoeenhaider)
+[![Stars](https://img.shields.io/github/stars/syedMoeenhaider/Fraud-Shield-AI?style=social)](https://github.com/syedMoeenhaider/Fraud-Shield-AI)
+
+</div>
